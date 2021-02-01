@@ -5,7 +5,7 @@ class Constants {
     companion object {
 
         const val BASE_URL = "https://api.spoonacular.com"
-        const val API_KEY = "2de9a8cc395c464283d3ba0763a859d2"
+        const val API_KEY = "f483362e1d6242278e1ece66ba2040a2"
 
         // API Query Keys
         const val QUERY_NUMBER = "number"
@@ -18,6 +18,18 @@ class Constants {
         // ROOM Database
         const val DATABASE_NAME = "recipes_database"
         const val RECIPES_TABLE = "recipes_table"
+
+        // Bottom Sheet and Preferences
+        const val DEFAULT_RECIPES_NUMBER = "50"
+        const val DEFAULT_MEAL_TYPE = "main course"
+        const val DEFAULT_DIET_TYPE = "gluten free"
+
+        const val PREFERENCES_NAME = "foody_preferences"
+        const val PREFERENCES_MEAL_TYPE = "mealType"
+        const val PREFERENCES_MEAL_TYPE_ID = "mealTypeId"
+        const val PREFERENCES_DIET_TYPE = "dietType"
+        const val PREFERENCES_DIET_TYPE_ID = "dietTypeId"
+
     }
 
 }
