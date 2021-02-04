@@ -44,4 +44,5 @@
     <string name="consistency">Consistency</string>
     <string name="original">Original</string>
     <string name="save_to_favorites">Save To Favorites</string>
+    <string name="no_favorites_recipe">No Favorites Recipe</string>
 </resources>
