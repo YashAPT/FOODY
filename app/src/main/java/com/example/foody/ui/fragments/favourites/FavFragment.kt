@@ -1,10 +1,8 @@
 package com.example.foody.ui.fragments.favourites
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.observe
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,13 +13,19 @@ import com.example.foody.databinding.FavoriteRowLayoutBinding
 import com.example.foody.databinding.FragmentFavBinding
 import com.example.foody.databinding.FragmentFavBindingImpl
 import com.example.foody.viewmodels.MainViewModel
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class FavFragment : Fragment() {
 
-    private val mAdapter: FavoriteRecipesAdapter by lazy { FavoriteRecipesAdapter() }
     private val mainViewModel: MainViewModel by viewModels()
+    private val mAdapter: FavoriteRecipesAdapter by lazy {
+        FavoriteRecipesAdapter(
+            requireActivity(),
+            mainViewModel
+        )
+    }
 
     private var _binding: FragmentFavBinding? = null
     private val binding get() = _binding!!
@@ -36,6 +40,7 @@ class FavFragment : Fragment() {
         binding.mainViewModel = mainViewModel
         binding.mAdapter = mAdapter
 
+        setHasOptionsMenu(true)
         setupRecyclerView(binding.favoriteRecipesRecyclerView)
 
         return binding.root
@@ -46,9 +51,31 @@ class FavFragment : Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.favorite_recipes_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.deleteAll_favorite_recipes_menu){
+            mainViewModel.deleteAllFavoriteRecipes()
+            showSnackBar()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun showSnackBar(){
+        Snackbar.make(
+            binding.root,
+            "All recipes removed.",
+            Snackbar.LENGTH_SHORT
+        ).setAction("Okay"){}
+            .show()
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+        mAdapter.clearContextualActionMode()
     }
 
 }
