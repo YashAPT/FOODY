@@ -28,7 +28,7 @@ API Used - [Spoonacular API](https://spoonacular.com/food-api)
 #### Recycler View DiffUtil
 #### Web View
 
-# SCREENSHOT
+# SCREENSHOTS
 
 ![](Images/img1.jpg) 
 
@@ -37,7 +37,8 @@ API Used - [Spoonacular API](https://spoonacular.com/food-api)
 # DEPENDENCIES
 
 `
-// Coordinator Layout
+
+    // Coordinator Layout
     implementation "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
 
     // Material Components
