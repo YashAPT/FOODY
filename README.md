@@ -12,21 +12,21 @@ API Used - [Spoonacular API](https://spoonacular.com/food-api)
 
 # COMPONENTS
 
-#### Data Binding
-#### Dependency Injection
-#### Shimmer Layout
-#### Motion Layout
-#### ROOM 
-#### Retrofit
-#### Dark Theme
-#### Kotlin Coroutines
-#### Local Cache
-#### Search API
-#### Navigation Component
-#### Jetpack Datastore
-#### Material Design
-#### Recycler View DiffUtil
-#### Web View
+- Data Binding
+- Dependency Injection
+- Shimmer Layout
+- Motion Layout
+- ROOM 
+- Retrofit
+- Dark Theme
+- Kotlin Coroutines
+- Local Cache
+- Search API
+- Navigation Component
+- Jetpack Datastore
+- Material Design
+- Recycler View DiffUtil
+- Web View
 
 # SCREENSHOTS
 
@@ -36,7 +36,7 @@ API Used - [Spoonacular API](https://spoonacular.com/food-api)
 
 # DEPENDENCIES
 
-`
+```
 
     // Coordinator Layout
     implementation "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
@@ -97,4 +97,5 @@ API Used - [Spoonacular API](https://spoonacular.com/food-api)
 
     // Jsoup
     implementation 'org.jsoup:jsoup:1.13.1'
-`
+    
+```
